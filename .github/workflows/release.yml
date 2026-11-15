@@ -1,0 +1,67 @@
+name: Windows release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      BILLSATHI_DISPLAY: secondary
+      BILLSATHI_SHOW_WINDOW: '0'
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Match tag to package version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $expectedTag = 'v' + (Get-Content package.json -Raw | ConvertFrom-Json).version
+          if ($env:RELEASE_TAG -ne $expectedTag) { throw "Expected tag $expectedTag" }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run dist -- --publish never
+      - run: npm run smoke:packaged
+      - name: Create checksum and download instructions
+        run: |
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          $installer = "BillSathi-Setup-$version.exe"
+          $hash = (Get-FileHash "release/$installer" -Algorithm SHA256).Hash.ToLower()
+          "$hash  $installer" | Set-Content release/SHA256SUMS.txt -Encoding utf8NoBOM
+          @"
+          ## BillSathi $version — free GST billing for Windows
+
+          **Download ``$installer`` from Assets below.** You do not need Node.js, Git, a GitHub account, or a subscription. The source-code ZIP is for developers.
+
+          Run the installer, open BillSathi, and choose **Start fresh** or **Try with demo data**. Core billing works offline. Your business data stays on your computer.
+
+          Includes invoices, POS, stock, purchases, parties, GST reports, PDF/thermal print, English/Hindi, backups and restore. See the repository README for the full feature list and limitations.
+
+          This community release is unsigned; Windows may display a publisher or SmartScreen warning. Hardware printer/scanner compatibility varies. Back up your data before updating and review GST exports before filing. ``SHA256SUMS.txt`` lets you check the download against the uploaded installer.
+          "@ | Set-Content release/NOTES.md -Encoding utf8NoBOM
+      - name: Publish installer and checksum
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          gh release create $env:RELEASE_TAG "release/BillSathi-Setup-$version.exe" release/SHA256SUMS.txt --verify-tag --title "BillSathi $version — Free Windows App" --notes-file release/NOTES.md --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="580" viewBox="0 0 1400 580" fill="none">
+  <title>BillSathi — serious billing. Zero subscription.</title>
+  <desc>Free GST billing, inventory and accounting for Indian businesses. Offline. Open source. Windows.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="580" gradientUnits="userSpaceOnUse"><stop stop-color="#0F172A"/><stop offset="1" stop-color="#172F69"/></linearGradient>
+    <linearGradient id="card" x1="900" y1="90" x2="1300" y2="490" gradientUnits="userSpaceOnUse"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#1E40AF"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="white" stroke-opacity=".045"/></pattern>
+  </defs>
+  <rect width="1400" height="580" rx="28" fill="url(#bg)"/>
+  <rect width="1400" height="580" rx="28" fill="url(#grid)"/>
+  <circle cx="1350" cy="10" r="310" fill="#2563EB" opacity=".12"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="64" y="54" width="48" height="48" rx="14" fill="#2563EB"/>
+    <path d="M79 67h14c10 0 10 12 0 12H79m0 0h16c11 0 11 12 0 12H79V67" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+    <text x="128" y="88" font-size="34" font-weight="700" fill="white">BillSathi</text>
+    <text x="64" y="159" font-size="15" font-weight="700" letter-spacing="3" fill="#F59E0B">FOR THE BUSINESS YOU ARE BUILDING.</text>
+    <text x="60" y="239" font-size="68" font-weight="750" letter-spacing="-2" fill="white">Serious billing.</text>
+    <text x="60" y="317" font-size="68" font-weight="750" letter-spacing="-2" fill="white">Zero subscription.</text>
+    <text x="64" y="370" font-size="24" fill="#CBD5E1">GST invoices. Inventory. Accounting. All yours.</text>
+    <rect x="64" y="416" width="238" height="55" rx="12" fill="#F59E0B"/>
+    <text x="183" y="451" text-anchor="middle" font-size="19" font-weight="700" fill="#0F172A">FREE WINDOWS APP</text>
+    <text x="64" y="523" font-size="17" fill="#CBD5E1">OFFLINE FIRST</text>
+    <circle cx="214" cy="517" r="3" fill="#F59E0B"/>
+    <text x="235" y="523" font-size="17" fill="#CBD5E1">ENGLISH + HINDI</text>
+    <circle cx="417" cy="517" r="3" fill="#F59E0B"/>
+    <text x="438" y="523" font-size="17" fill="#CBD5E1">OPEN SOURCE</text>
+    <rect x="927" y="96" width="379" height="398" rx="26" fill="black" opacity=".16" transform="rotate(5 1116 295)"/>
+    <rect x="913" y="82" width="379" height="398" rx="26" fill="url(#card)" stroke="#60A5FA" stroke-opacity=".4"/>
+    <text x="950" y="134" font-size="15" font-weight="700" letter-spacing="2" fill="#DBEAFE">THE ENTIRE PRICING PAGE</text>
+    <text x="942" y="289" font-size="148" font-weight="750" letter-spacing="-8" fill="white">₹0</text>
+    <text x="951" y="332" font-size="21" fill="#DBEAFE">No trial. No renewal. No tiers.</text>
+    <path d="M951 363h302" stroke="#60A5FA" stroke-opacity=".5"/>
+    <text x="951" y="402" font-size="19" fill="white">Your shop earns the money.</text>
+    <text x="951" y="435" font-size="19" font-weight="700" fill="#FDE68A">Your shop keeps the money.</text>
+  </g>
+</svg>

@@ -1,0 +1,1 @@
+CREATE TRIGGER audit_log_respects_setting BEFORE INSERT ON `audit_log` WHEN NEW.`entity` <> 'settings' AND EXISTS (SELECT 1 FROM `settings` WHERE `firm_id` = NEW.`firm_id` AND `key` = 'auditTrail' AND `value` = 'false') BEGIN SELECT RAISE(IGNORE); END;

@@ -1,0 +1,226 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 550;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.button.primary {
+  background: var(--primary);
+  color: var(--surface);
+}
+.button.primary:hover {
+  background: var(--primary-hover);
+}
+.button.secondary {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.button.secondary:hover {
+  background: var(--hover);
+}
+.button.ghost {
+  color: var(--muted);
+  background: transparent;
+}
+.button.ghost:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.button.danger {
+  background: var(--danger);
+  color: var(--surface);
+}
+.icon-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.icon-button:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.input {
+  min-height: 42px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 12px;
+  width: 100%;
+  font-size: 14px;
+  outline-offset: 1px;
+}
+.input::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+.input.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 12px;
+}
+.select > svg {
+  margin-left: auto;
+}
+.combo {
+  width: var(--radix-popover-trigger-width);
+  min-width: 240px;
+  padding: 8px !important;
+}
+.options {
+  max-height: 260px;
+  overflow: auto;
+  margin-top: 6px;
+}
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+  min-height: 40px;
+  color: var(--text);
+  background: transparent;
+  font-size: 13px;
+}
+.option:hover,
+.option.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.popover,
+.dropdown {
+  z-index: 100;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 8px 32px var(--overlay);
+  max-width: min(360px, calc(100vw - 24px));
+}
+.popover-arrow {
+  fill: var(--surface);
+}
+.tooltip {
+  z-index: 120;
+  background: var(--text);
+  color: var(--surface);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.dropdown {
+  min-width: 200px;
+  padding: 6px;
+}
+.menu-item {
+  padding: 10px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+.menu-item[data-highlighted] {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: var(--overlay);
+  backdrop-filter: blur(3px);
+}
+.dialog {
+  position: fixed;
+  z-index: 80;
+  width: min(520px, calc(100vw - 40px));
+  max-height: 85vh;
+  overflow: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 16px 64px var(--overlay);
+  padding: 24px;
+}
+.dialog > p {
+  margin: 12px 0 20px;
+}
+.dialog .section-heading {
+  margin-bottom: 12px;
+}
+.dialog [data-radix-dialog-title] {
+  font-size: 18px;
+  font-weight: 600;
+}
+.sheet {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  transform: none;
+  height: 100vh;
+  max-height: none;
+  border-radius: 16px 0 0 16px;
+}
+
+/* Row of filters/actions above a list: wraps on narrow screens, selects keep a sensible width. */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.card.toolbar {
+  padding: 12px 16px;
+}
+.toolbar > button[role='combobox'],
+.toolbar > .select,
+.toolbar > select {
+  width: auto;
+  min-width: 180px;
+  flex: 0 1 240px;
+}
+.show-more {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}

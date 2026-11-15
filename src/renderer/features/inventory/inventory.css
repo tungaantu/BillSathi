@@ -1,0 +1,333 @@
+/* Inventory screens & POS — uses the shared design tokens only. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.card-grid h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+}
+.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+th.num,
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+td.num .input {
+  max-width: 110px;
+  margin-left: auto;
+}
+.transfer-line {
+  display: grid;
+  grid-template-columns: minmax(200px, 2fr) 110px minmax(150px, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+.serial-events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.serial-events li {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr 80px;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.serial-events .in {
+  color: var(--success);
+}
+.serial-events .out {
+  color: var(--danger);
+}
+.label-preview {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  max-width: 280px;
+}
+.label-preview svg {
+  width: 220px;
+  height: 48px;
+}
+.serial-pick {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  max-height: 260px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px;
+}
+.line-stock {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+.line-stock.warn {
+  color: var(--danger);
+}
+
+/* ---------- POS (full screen counter billing) ---------- */
+.pos {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  background: var(--canvas);
+}
+.pos-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.pos-bar h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.pos-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 32%);
+}
+.pos-products {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  min-height: 0;
+  overflow: auto;
+}
+.pos-products form .input {
+  font-size: 1.15rem;
+  height: 52px;
+}
+.pos-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pos-chips button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 6px 14px;
+  min-height: 36px;
+  cursor: pointer;
+}
+.pos-chips button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
+}
+.pos-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.pos-tile {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.pos-tile:hover,
+.pos-tile:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+.pos-tile img,
+.pos-initial {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.pos-initial {
+  display: grid;
+  place-items: center;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.pos-tile small {
+  color: var(--muted);
+}
+.pos-tile small.out {
+  color: var(--danger);
+}
+.pos-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  min-height: 0;
+}
+.pos-lines {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+.pos-empty {
+  text-align: center;
+  padding: 32px 0;
+}
+.pos-line {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: grid;
+  gap: 6px;
+}
+.pos-line.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.pos-line-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.pos-line-controls {
+  display: grid;
+  grid-template-columns: auto 80px auto 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+.pos-totals {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.pos-grand {
+  font-size: 1.6rem;
+}
+.pos-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.pos-actions .button {
+  min-height: 48px;
+  justify-content: center;
+}
+.pos-pay-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.pos-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.pos-methods button {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+.pos-methods button.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.pos-change {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--success);
+  font-weight: 600;
+}
+.pos-qr {
+  display: grid;
+  justify-items: center;
+  margin: 0;
+  gap: 6px;
+}
+.pos-held {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.pos-summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+}
+.pos-summary .contents {
+  display: contents;
+}
+@media (max-width: 1000px) {
+  .pos-body {
+    grid-template-columns: 1fr;
+  }
+  .transfer-line {
+    grid-template-columns: 1fr 100px;
+  }
+}
+.inventory-screen .card:not(.report-table-scroll):not(.toolbar),
+.inventory-panel {
+  padding: 20px;
+}
+.inventory-panel .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.inventory-panel .section-heading > :last-child {
+  width: min(320px, 100%);
+}

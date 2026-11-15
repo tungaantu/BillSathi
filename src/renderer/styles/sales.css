@@ -1,0 +1,285 @@
+.sales-header {
+  padding: 24px;
+}
+.sales-editor-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.sales-editor-title h2 {
+  margin: 0;
+}
+.draft-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px;
+}
+.draft-tabs > div {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  white-space: nowrap;
+  background: var(--surface);
+}
+.draft-tabs > div.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.sales-grid {
+  padding: 16px;
+  min-width: 0;
+}
+.sales-grid-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.sales-grid-bar > [role='combobox'] {
+  max-width: 600px;
+}
+.invoice-grid {
+  min-width: 1350px;
+  width: 100%;
+}
+.invoice-grid td {
+  padding: 8px 5px;
+  vertical-align: top;
+}
+.invoice-grid th {
+  white-space: nowrap;
+}
+.invoice-grid .input {
+  min-width: 82px;
+}
+.invoice-grid td:first-child {
+  min-width: 220px;
+  max-width: 300px;
+}
+.invoice-grid small {
+  display: block;
+  color: var(--muted);
+  padding-top: 4px;
+}
+.invoice-grid .money {
+  font-size: 13px;
+}
+.sales-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.sales-footer > .card {
+  padding: 24px;
+  min-width: 0;
+}
+.charge-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.6fr auto;
+  gap: 8px;
+  align-items: center;
+}
+.payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+.sales-totals > div,
+.sales-balance {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 7px 0;
+}
+.sales-totals .total,
+.sales-balance {
+  font-size: 21px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  padding-top: 14px;
+}
+.sales-save {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.sales-warning {
+  padding: 12px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.sales-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+.sales-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sales-strip > .card {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sales-strip .money {
+  font-size: 24px;
+}
+.sales-table table {
+  width: 100%;
+}
+.sales-table td,
+.sales-table th {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.invoice-preview-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(300px, 1fr) 200px;
+  gap: 16px;
+  align-items: start;
+}
+.invoice-preview-layout aside {
+  padding: 16px;
+}
+.invoice-preview-layout aside h3 {
+  margin: 0;
+}
+.invoice-page {
+  width: 100%;
+  height: 1000px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 8px;
+}
+.invoice-live {
+  width: 100%;
+  height: 650px;
+  border: 1px solid var(--border);
+  background: white;
+}
+.allocation-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.sales-header textarea {
+  min-height: 80px;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+.sales-footer .form-grid {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 1350px) {
+  .sales-footer {
+    grid-template-columns: 1fr;
+  }
+  .invoice-preview-layout {
+    grid-template-columns: 150px minmax(260px, 1fr);
+  }
+  .invoice-preview-layout > aside:last-child {
+    grid-column: 1/-1;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .invoice-preview-layout > aside:last-child > * {
+    max-width: 220px;
+  }
+  .sales-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.theme-choice {
+  border: 1px solid var(--border);
+  justify-content: flex-start;
+  cursor: pointer;
+  min-height: 54px;
+}
+.theme-choice:hover {
+  box-shadow: 0 2px 8px var(--overlay);
+  transform: translateY(-1px);
+}
+.theme-swatch {
+  width: 28px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-top: 8px solid var(--primary);
+  border-radius: 3px;
+  background: var(--surface);
+}
+.swatch-bold {
+  border-top-width: 14px;
+}
+.swatch-elegant {
+  border-top: 3px double var(--primary);
+}
+.swatch-minimal {
+  border-top-color: var(--text);
+}
+
+.finance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.transfer-flow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.transfer-flow > .field {
+  flex: 1;
+}
+.expense-chart {
+  height: 200px;
+  width: 280px;
+}
+.expense-summary {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.expense-summary > div:first-child {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 24px;
+}
+.expense-summary h3 {
+  grid-column: 1/-1;
+}
+.expense-summary p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.expense-summary .money {
+  font-size: 16px;
+}
+.expense-group th {
+  background: var(--canvas);
+  text-align: left;
+}

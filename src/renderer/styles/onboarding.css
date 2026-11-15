@@ -1,0 +1,220 @@
+.startup {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.startup p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.onboarding {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  background: var(--surface);
+}
+.onboarding-art {
+  background: var(--primary-soft);
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 23px;
+  font-weight: 650;
+  letter-spacing: -0.8px;
+}
+.art-copy {
+  margin: auto 0;
+  padding: 48px 0;
+}
+.art-copy .badge {
+  background: var(--surface);
+  font-size: 10px;
+}
+.art-copy h1 {
+  font-size: 46px;
+  font-weight: 600;
+  max-width: 370px;
+  line-height: 1.2;
+  margin: 24px 0 16px;
+  letter-spacing: -1.7px;
+}
+.art-copy > p {
+  color: var(--muted);
+  font-size: 16px;
+}
+.offline-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.business-illustration {
+  height: 240px;
+  position: relative;
+  margin-top: 40px;
+  max-width: 360px;
+}
+.illustration-orbit {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px dashed var(--primary);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.25;
+}
+.illustration-store {
+  position: absolute;
+  inset: 42px 0 0;
+  margin: auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 32px;
+  transform: rotate(-5deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgb(37 99 235 / 10%);
+}
+.illustration-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.chip-one {
+  top: 30px;
+  left: 10%;
+  color: var(--success);
+  transform: rotate(-12deg);
+}
+.chip-two {
+  top: 20px;
+  right: 10%;
+  color: var(--accent);
+  transform: rotate(12deg);
+}
+.chip-three {
+  bottom: 5px;
+  right: 16%;
+  color: var(--primary);
+  transform: rotate(6deg);
+}
+.onboarding-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 64px;
+}
+.wizard {
+  width: 100%;
+  max-width: 450px;
+}
+.wizard-progress {
+  display: flex;
+  margin-bottom: 52px;
+  gap: 16px;
+}
+.wizard-progress > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  color: var(--muted);
+}
+.wizard-progress span {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.wizard-progress .active {
+  color: var(--primary);
+}
+.wizard-progress .active span {
+  background: var(--primary);
+  color: var(--surface);
+  border-color: transparent;
+}
+.wizard-progress small {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.wizard h2 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+.wizard > .muted {
+  font-size: 13px;
+}
+.wizard-fields {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-height: 268px;
+}
+.wizard .form-actions {
+  margin-top: 32px;
+}
+.wizard .form-actions > .primary {
+  min-width: 150px;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.choice {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.choice.selected {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+.choice input {
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.choice strong {
+  font-size: 14px;
+}
+.choice p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="270" viewBox="0 0 1400 270">
+  <title>Free means free. Not free until you need the useful bits.</title>
+  <rect width="1400" height="270" rx="24" fill="#EFF6FF"/>
+  <rect x="0" y="0" width="10" height="270" rx="5" fill="#2563EB"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="56" y="67" font-size="15" font-weight="700" letter-spacing="3" fill="#2563EB">KEEP YOUR MARGINS. LOSE THE SUBSCRIPTION.</text>
+    <text x="53" y="129" font-size="44" font-weight="750" letter-spacing="-1" fill="#0F172A">Free means free.</text>
+    <text x="56" y="178" font-size="25" fill="#475569">Not “free until you need the useful bits.”</text>
+    <text x="56" y="222" font-size="19" fill="#475569">No card details. No sales calls. No “upgrade to print” moment.</text>
+    <rect x="1030" y="38" width="316" height="194" rx="18" fill="#2563EB"/>
+    <text x="1188" y="140" text-anchor="middle" font-size="82" font-weight="750" fill="white">₹0</text>
+    <text x="1188" y="187" text-anchor="middle" font-size="20" fill="#DBEAFE">EVERY FEATURE INCLUDED</text>
+  </g>
+</svg>

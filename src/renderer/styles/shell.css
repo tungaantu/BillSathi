@@ -1,0 +1,220 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  height: 100vh;
+  overflow: hidden;
+}
+.app-shell.is-collapsed {
+  --sidebar-width: 76px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  height: 100vh;
+  overflow: hidden;
+  z-index: 20;
+}
+.sidebar-brand {
+  height: 80px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 21px;
+  letter-spacing: -0.7px;
+}
+.brand-symbol {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  flex-shrink: 0;
+}
+.sidebar-scroll {
+  padding: 12px;
+  overflow: auto;
+  flex: 1;
+  scrollbar-width: thin;
+}
+.nav-label {
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin: 12px 14px 8px;
+}
+.manage-label {
+  margin-top: 28px;
+}
+.nav-link {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  text-align: left;
+  margin: 2px 0;
+}
+.nav-link:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.nav-link > span:first-of-type {
+  flex: 1;
+}
+.nav-link.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+.nav-link.group-active {
+  color: var(--text);
+}
+.nav-link .rotate {
+  transform: rotate(180deg);
+}
+.nav-children {
+  border-left: 1px solid var(--border);
+  margin: 6px 0 8px 21px;
+  padding-left: 10px;
+}
+.nav-link.nested {
+  font-size: 12px;
+  min-height: 36px;
+  padding: 8px 12px;
+}
+.nav-active-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+.sidebar-footer {
+  margin: 0 12px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+.sidebar-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.collapsed .sidebar-brand {
+  padding: 22px 20px;
+}
+.collapsed .nav-link {
+  justify-content: center;
+  padding: 10px;
+}
+.collapsed .nav-link > span,
+.collapsed .nav-link > svg:last-child:not(:first-child),
+.collapsed .nav-label {
+  display: none;
+}
+.collapsed .sidebar-footer {
+  justify-content: center;
+}
+.workspace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.topbar {
+  min-height: 80px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 28px;
+}
+.firm-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  max-width: 205px;
+  min-width: 150px;
+}
+.firm-picker .input {
+  border: 0;
+  font-weight: 600;
+  min-width: 0;
+  padding-left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+.search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+  max-width: 320px;
+  flex: 1;
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--canvas);
+  color: var(--muted);
+  font-size: 12px;
+}
+.search-trigger > span {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+.topbar-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+  margin: 0 4px;
+}
+.language-toggle {
+  min-height: 40px;
+  min-width: 36px;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  font-size: 13px;
+  border-radius: 8px;
+}
+.language-toggle:hover {
+  background: var(--hover);
+}
+.page-content {
+  flex: 1;
+  overflow: auto;
+  padding: 32px;
+  zoom: var(--workspace-zoom);
+}
+.page-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}

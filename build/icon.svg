@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>BillSathi</title>
+  <!-- Blue rounded square, same proportions and colour as the in-app logo (#2563EB). -->
+  <rect width="512" height="512" rx="132" fill="#2563EB"/>
+  <!-- White leaf (ISC-licensed Lucide "leaf" outline, solid-filled so it stays readable at 16 px). -->
+  <g transform="translate(106 106) scale(12.5)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#FFFFFF" d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/>
+    <path fill="none" d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/>
+  </g>
+  <!-- Rupee-style bar across the leaf vein, in the background colour. -->
+  <g stroke="#2563EB" stroke-width="22" stroke-linecap="round" fill="none">
+    <path d="M214 232h104M214 276h104"/>
+    <path d="M214 232c46 0 66 20 66 44-8 30-40 40-66 40l78 52"/>
+  </g>
+</svg>

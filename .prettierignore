@@ -1,0 +1,8 @@
+node_modules
+out
+dist
+package-lock.json
+src/main/db/migrations/meta
+.local-only
+test-results
+release

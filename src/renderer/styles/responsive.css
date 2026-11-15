@@ -1,0 +1,141 @@
+@media (min-width: 1700px) {
+  .stats-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .page-content {
+    padding: 40px;
+  }
+  .page-heading {
+    margin-bottom: 12px;
+  }
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 1.8fr) minmax(360px, 1fr);
+  }
+  .chart {
+    height: 300px;
+  }
+  .chart-card .empty-state {
+    padding: 44px 20px;
+  }
+}
+@media (max-width: 1400px) {
+  :root {
+    --sidebar-width: 216px;
+  }
+  .topbar {
+    gap: 12px;
+    padding: 16px 20px;
+  }
+  .topbar-actions {
+    gap: 4px;
+  }
+  .topbar .button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+  .firm-picker {
+    max-width: 170px;
+    min-width: 130px;
+  }
+  .search-trigger kbd {
+    display: none;
+  }
+  .search-trigger > span {
+    max-width: 95px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .page-content {
+    padding: 26px;
+  }
+  .stat-card {
+    padding: 16px 20px;
+  }
+  .stack {
+    gap: 20px;
+  }
+  .dashboard-grid {
+    gap: 20px;
+  }
+  .chart-card,
+  .checklist {
+    padding: 20px;
+  }
+  .quick-card {
+    padding: 14px;
+    gap: 8px;
+  }
+  .page-heading .badge {
+    font-size: 10px;
+  }
+  .profile-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+  }
+  .onboarding-art {
+    padding: 32px;
+  }
+  .onboarding-main {
+    padding: 32px 48px;
+  }
+  .art-copy h1 {
+    font-size: 40px;
+  }
+  .business-illustration {
+    height: 200px;
+    margin-top: 24px;
+  }
+  .illustration-orbit {
+    width: 200px;
+    height: 200px;
+  }
+  .illustration-store {
+    width: 140px;
+    height: 140px;
+    top: 32px;
+  }
+  .wizard-progress {
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: 1150px) {
+  .topbar .firm-picker {
+    max-width: 130px;
+    min-width: 100px;
+  }
+  .topbar-actions .icon-button {
+    width: 32px;
+  }
+  .search-trigger > span {
+    display: none;
+  }
+  .search-trigger {
+    min-width: 36px;
+    max-width: 40px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile-grid,
+  .help-layout {
+    grid-template-columns: 1fr;
+  }
+  .shortcut-card {
+    position: static;
+  }
+  .page-heading .badge {
+    display: none;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

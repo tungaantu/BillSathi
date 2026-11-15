@@ -1,0 +1,48 @@
+# Windows installer for BillSathi.  Build with:  npm run dist   (output: release/)
+appId: in.billsathi.app
+productName: BillSathi
+copyright: Copyright © BillSathi
+directories:
+  output: release
+  buildResources: build
+# Only the compiled app and its production dependencies are packed (see package.json "main").
+files:
+  - out/**
+  - package.json
+  # The renderer is bundled by Vite, so its UI libraries do not need to ship as node_modules.
+  # The main process only needs drizzle-orm, sql.js, exceljs, qrcode, zod and the print fonts.
+  - '!node_modules/{lucide-react,recharts,react,react-dom,react-i18next,i18next,react-hook-form,zustand,es-toolkit,victory-vendor,react-redux,redux,reselect,immer,scheduler,tiny-invariant,decimal.js-light,eventemitter3,aria-hidden,get-nonce,react-remove-scroll,react-remove-scroll-bar,react-style-singleton,use-callback-ref,use-sidecar,use-sync-external-store,void-elements,html-parse-stringify}/**'
+  - '!node_modules/{@radix-ui,@tanstack,@hookform,@reduxjs,@floating-ui}/**'
+  - '!node_modules/d3-*/**'
+  # sql.js ships debug, browser and asm.js builds; only sql-wasm.js + sql-wasm.wasm are used.
+  - '!node_modules/sql.js/dist/{*debug*,*browser*,sql-asm*,worker*,*.map}'
+  - '!node_modules/sql.js/{examples,gh-pages,src,test}/**'
+asar: true
+# sql.js reads its .wasm with fs; keep it as a real file next to the asar so loading is never in doubt.
+asarUnpack:
+  - node_modules/sql.js/dist/*.wasm
+# Use the Electron already installed by npm instead of downloading it again.
+electronDist: node_modules/electron/dist
+win:
+  target:
+    - target: nsis
+      arch: x64
+  icon: build/icon.ico
+  artifactName: BillSathi-Setup-${version}.exe
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  allowElevation: false
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: BillSathi
+  runAfterFinish: true
+  # User data (%APPDATA%\BillSathi) is kept on uninstall unless the user ticks the box that
+  # build/installer.nsh adds to the uninstaller.
+  deleteAppDataOnUninstall: false
+  include: build/installer.nsh
+  artifactName: BillSathi-Setup-${version}.exe
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerHeaderIcon: build/icon.ico
